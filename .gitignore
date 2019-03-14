@@ -1,0 +1,24 @@
+# local work env #
+.git
+.idea
+.vscode
+.editorconfig
+.vagrant
+package-lock.json
+vendor/
+
+# server side #
+robots.txt
+404.html
+.user.ini
+.well-known
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
