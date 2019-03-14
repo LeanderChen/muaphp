@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * mua-cli
+ *
+ * @require git-client, php@7
+ * @author leander
+ * @version 0.8.0
+ */
+
+// TO-DO: 实现指令列表， help(帮助)、create(创建)、migrate(迁移)、clean(清理)、backup(备份)、upgrade(更新)、version(版本)
+// TO-DO: 实现选项列表， -s(静默)、-l(日志)

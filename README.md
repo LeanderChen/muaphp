@@ -8,17 +8,17 @@ A php framework for application or business system assembing instantly
 ## TOC  
 
 1. what different  
-`Mua` is here for powerful and Modularized web project.  
+`mua` is here for powerful and Modularized web project.  
   - `friendly` for community framework and components. ([here]() for more)  
   - `normal` for php ecosystem & web architecture. ([here]() for more)  
 
 2. easy for you
 
 3. parts of project  
-  - `mua-full`  
-  - `mua-core`  
-  - `mua4composer`  
-  - `mua4docker`
+  - `mua`  
+  - `mua core`  
+  - `Mua4Composer`  
+  - `Mua4Docker`
 
 4. ecosystem  
   4.1 official tools  
