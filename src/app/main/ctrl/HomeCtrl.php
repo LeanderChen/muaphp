@@ -2,19 +2,22 @@
 
 namespace app\main\ctrl;
 
-use \mua\classes\Ctrl;
+use \app\base\ctrl\BaseCtrl;
 use \mua\lib\Log;
 
-class HomeCtrl extends Ctrl
+class HomeCtrl extends BaseCtrl
 {
     public function index()
     {
-//        echo 'I\'m home_index,the default home controller action';
-        $data = array(
-            'msg' => 'I\'m first view of mua!'
-        );
+        $data = [
+            'msgs' => [
+                'I\'m first view of mua!',
+                'Mua is a php framework for application or business system assembing instantly.',
+                'All is here.'
+            ]
+        ];
         $this->assign($data);
-        $this->assign('title','测试视图');
+        $this->assign('title','Greetings from MUA');
         $this->render('home/index');
         Log::log('test');
     }

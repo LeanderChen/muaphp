@@ -3,8 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo $title; ?></title>
+    <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <style>
+        html, body {
+        }
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /*menu*/
+        .menu {
+            padding: 0 12px;
+        }
+
+        /*slide pages*/
+        section#swiper {
+            position: relative;
+            height: calc(100% - 43px);
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <h1><?php echo $msg; ?></h1>
+    <header>
+        <div class="ui menu secondary">
+            <a class="item active">Home</a>
+            <a class="item">Learn</a>
+            <div class="ui pointing dropdown link item">
+                <span class="text">Ecosystem</span>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="header">Official Team</div>
+                    <div class="item">sadmin</div>
+                    <div class="item">o2</div>
+                    <div class="divider"></div>
+                    <div class="header">Community</div>
+                    <div class="item">
+                        <i class="dropdown icon"></i>
+                        <span class="text">Plugins</span>
+                        <div class="menu">
+                            <div class="header">p-header</div>
+                            <div class="item">p1</div>
+                            <div class="item">p2</div>
+                        </div>
+                    </div>
+                    <div class="item">c2</div>
+                </div>
+            </div>
+            <a class="item">Group</a>
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+                <div class="ui pointing item dropdown labeled icon">
+                    <i class="world icon"></i>
+                    <span class="text">EN</span>
+                    <div class="menu">
+                        <div class="item">CHS</div>
+                        <div class="item">EN</div>
+                        <div class="item">JAP</div>
+                        <div class="item">KOR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="swiper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <?php foreach($msgs as $m) { ?>
+                <div class="swiper-slide"><h3><?php echo $m; ?></h3></div>
+                <?php } ?>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
+
+    <!-- site script -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script>
+        var mswiper = new Swiper ('.swiper-container', {
+            loop: false,
+            direction: 'vertical',
+            slidesPerView: 1,
+            spaceBetween: 0,
+            mousewheel: true,
+            coverflowEffect: {
+                rotate: 30,
+                slideShadows: true,
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        })
+        $('.ui.dropdown').dropdown();
+    </script>
 </body>
 </html>
