@@ -4,6 +4,8 @@ namespace mua;
 
 use \mua\classes\Route;
 use \mua\lib\Log;
+use \Whoops\Run;
+use \Whoops\Handler\PrettyPageHandler;
 
 /**
  * @class Init
@@ -18,11 +20,20 @@ class Init {
 
     /**
      * run web application
+     * @access public
      */
     static public function run()
     {
+        // 引入composer自动加载
+        include ROOT. 'vendor/autoload.php';
+
+        // 注册错误处理器 flip/whoops
+        $whoops = new Run;
+        $whoops->pushHandler(new PrettyPageHandler);
+        $whoops->register();
+
         // 引入辅助函数
-        include MCORE.'function/common.php';
+        include MCORE. 'function/common.php';
 
         // TO-DO: [190314] 读取预置、用户配置文件决定启动行为：debug-level、runtime-conf、autoload、log-conf、db driver、cache driver、router...
         // DEBUG模式
@@ -67,6 +78,7 @@ class Init {
     /**
      * auto load mua classes & libraries
      *
+     * @access public
      * @param string $class name of class needed
      *
      * @return Object
