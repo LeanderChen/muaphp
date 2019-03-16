@@ -9,4 +9,4 @@
  */
 
 // TO-DO: 实现指令列表， help(帮助)、create(创建)、migrate(迁移)、clean(清理)、backup(备份)、upgrade(更新)、version(版本)
-// TO-DO: 实现选项列表， -s(静默)、-l(日志)
+// TO-DO: 实现选项列表， -n(名称)、-c(配置)、-s(静默)、-l(日志)
