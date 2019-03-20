@@ -2,8 +2,7 @@
 namespace SanderHeijselaar\EzPdo;
 
 /**
- * ezORM is based on EzPDO.
- *  for a class for easy & save DB access
+ * EzPDO for a class for easy & save DB access
  *
  * @version 0.3.0
  */
