@@ -11,7 +11,6 @@ class HomeCtrl extends BaseCtrl
     {
         $data = [
             'msgs' => [
-                'I\'m first view of mua!',
                 'Mua is a php framework for application or business system assembing instantly.',
                 'All is here.'
             ]

@@ -27,18 +27,18 @@ class Init {
         // 引入composer自动加载
         include ROOT. 'vendor/autoload.php';
 
-        // 注册错误处理器 flip/whoops
-        $whoops = new Run;
-        $whoops->pushHandler(new PrettyPageHandler);
-        $whoops->register();
-
         // 引入辅助函数
         include MCORE. 'function/common.php';
 
         // TO-DO: [190314] 读取预置、用户配置文件决定启动行为：debug-level、runtime-conf、autoload、log-conf、db driver、cache driver、router...
         // DEBUG模式
         define('DEBUG',true);
-        if(DEBUG){
+        if (DEBUG) {
+            // 注册错误处理器 flip/whoops
+            $whoops = new Run;
+            $whoops->pushHandler(new PrettyPageHandler);
+            $whoops->register();
+
             ini_set('display_errors','On');
         } else {
             ini_set('display_errors','off');
@@ -59,7 +59,7 @@ class Init {
         $action = $route->action;
 
         // 启动应用控制器
-        if(!is_file( $ctrlfile )){
+        if (!is_file( $ctrlfile )) {
             header('status: 404 Not Found');
             exit;
 //            throw new \Exception('Not Find Controller:'.$ctrl);
@@ -90,7 +90,7 @@ class Init {
         } else {
             $class = str_replace('\\','/',$class);
             $ifile = ROOT. $class.'.php';
-            if(is_file($ifile)) {
+            if (is_file($ifile)) {
                 include $ifile;
                 self::$classMap[$class] = $class;
             } else {
