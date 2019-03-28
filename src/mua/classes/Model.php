@@ -1,5 +1,5 @@
 <?php
-namespace mua\lib;
+namespace mua\classes;
 
 use \mua\lib\Config;
 use \Medoo\Medoo;
@@ -12,6 +12,9 @@ use \Medoo\Medoo;
 class Model extends Medoo
 {
     private $mconf;
+    /**
+     * @pro
+     */
     protected $obj;
 
     /**
@@ -19,7 +22,7 @@ class Model extends Medoo
      * @access public
      * @param string $obj 对象名
      */
-    public function __construct($obj = '')
+    public function __construct(string $obj = '')
     {
         $conf = Config::get_all('database');
         $this->mconf = [
@@ -51,12 +54,28 @@ class Model extends Medoo
         $obj && $this->obj = $obj;
     }
 
-    protected function get($_where, $cols = '')
+    /**
+     * get, query main table records by rewrite /Medoo/Medoo::get()
+     * @access protected
+     * @name get
+     * @param array
+     *
+     * @return array
+     */
+    protected function get(array $_where, array $cols) : array
     {
         return parent::get($this->obj, $cols, $_where);
     }
 
-    protected function upd($_data, $_where = [])
+    /**
+     * update
+     * @access protected
+     * @name upd
+     * @param array $_data  new data
+     * @param array $_where where clause
+     *
+     */
+    protected function upd(array $_data, array $_where = [])
     {
         $this->update($this->obj, $_data, $_where);
     }

@@ -23,18 +23,6 @@ class HomeCtrl extends BaseCtrl
 
     public function db_test()
     {
-        $model = new \mua\lib\Model();
-        $sql = 'SELECT * FROM ifm_user';
-        $ret = $model->query($sql);
-        p($ret->fetchAll());
-
-        // 初始化超级管理员
-        $salt = mask_make(12);
-        $password = 'mua';
-        $password = md5(md5($password.$salt).$salt);
-        $time = time();
-        $sql = "UPDATE ifm_user SET password='{$password}',salt='{$salt}',createtime={$time} WHERE uid=1";
-        $ret = $model->exec($sql);
-        p($ret);
+        
     }
 }

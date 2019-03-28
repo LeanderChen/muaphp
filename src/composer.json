@@ -6,7 +6,7 @@
         "PHP", "PHP Framework"
     ],
     "require": {
-        "php": ">= 5.6.3",
+        "php": ">= 7.1.27",
         "filp/whoops": "*",
         "catfan/medoo": "^1.6"
     },
